@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.streamlit/
+.pytest_cache/
+.venv/
+_vendor/
+models/*.pkl
+models/*.joblib
+
+interview.md
