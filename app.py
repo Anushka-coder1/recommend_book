@@ -79,7 +79,6 @@ CUSTOM_CSS = """
 </style>
 """
 
-
 @st.cache_resource(show_spinner=False)
 def load_recommender() -> BookRecommender:
     """Load the persisted recommendation artifacts once per session."""

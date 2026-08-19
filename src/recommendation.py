@@ -80,7 +80,7 @@ class BookRecommender:
                     publisher=str(details["Publisher"]),
                     year_of_publication=int(details["Year-Of-Publication"]),
                     similarity_score=round(float(score), 4),
-                )
+                )                
             )
             if len(recommendations) == top_n:
                 break

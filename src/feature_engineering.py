@@ -7,11 +7,10 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
-
 @dataclass(slots=True)
+
 class FeatureArtifacts:
     """Artifacts required by the recommendation layer and Streamlit app."""
-
     popular_books: pd.DataFrame
     pivot_table: pd.DataFrame
     similarity_matrix: np.ndarray
