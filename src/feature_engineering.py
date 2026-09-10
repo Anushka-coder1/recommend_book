@@ -19,7 +19,7 @@ class FeatureArtifacts:
 
 def build_popular_books(
     interactions: pd.DataFrame,
-    min_ratings: int = 250,
+    min_ratings: int = 20,
     limit: int = 50,
 ) -> pd.DataFrame:
     """Create a popularity-based fallback ranking for the homepage."""

@@ -33,6 +33,10 @@ class BookRecommender:
     def __init__(self, models_dir: Path | None = None) -> None:
         base_dir = models_dir or MODELS_DIR
         self.popular_books = self._load_pickle(base_dir / "popular_books.pkl")
+
+        print("Popular books type:", type(self.popular_books))
+        print("Popular books shape:", self.popular_books.shape)
+        print(self.popular_books.head(12))
         self.pivot_table = self._load_pickle(base_dir / "pivot_table.pkl")
         self.similarity_matrix = self._load_pickle(base_dir / "similarity.pkl")
         self.book_lookup = self._load_pickle(base_dir / "book_lookup.pkl")
