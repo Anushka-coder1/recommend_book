@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: recommend-book
+    env: python
+    buildCommand: pip install -r requirements.txt && python train_pipeline.py
+    startCommand: streamlit run app.py --server.address=0.0.0.0 --server.port=$PORT --server.headless=true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
