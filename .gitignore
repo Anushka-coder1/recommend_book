@@ -5,7 +5,4 @@ __pycache__/
 .pytest_cache/
 .venv/
 _vendor/
-models/*.pkl
-models/*.joblib
-
 interview.md
