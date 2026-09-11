@@ -66,6 +66,21 @@ python train_pipeline.py
 streamlit run app.py
 ```
 
+## Deploying to Render
+
+This repository includes `render.yaml`. If the service is configured manually in
+Render, use the same commands:
+
+```text
+Build Command: pip install -r requirements.txt && python train_pipeline.py
+Start Command: streamlit run app.py --server.address=0.0.0.0 --server.port=$PORT --server.headless=true
+```
+
+The training command must run during the build because the model pickle files
+are generated artifacts and are intentionally excluded from Git. The start
+command must bind Streamlit to `0.0.0.0` and Render's `$PORT`; otherwise Render
+cannot reach the application and returns `502 Bad Gateway`.
+
 ## Modeling Notes
 
 - Collaborative filtering is used because ratings encode shared reader preferences.
