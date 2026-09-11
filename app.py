@@ -369,7 +369,7 @@ def render_homepage(recommender: BookRecommender) -> None:
     )
 
     st.markdown("<div class='section-title'>Popular Books</div>", unsafe_allow_html=True)
-    popular = recommender.popular_catalog(limit=12)
+    popular = recommender.popular_catalog(limit=4)
     columns = st.columns(4)
     for idx, (_, row) in enumerate(popular.iterrows()):
         with columns[idx % 4]:
