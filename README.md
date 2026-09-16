@@ -72,6 +72,24 @@ streamlit run app.py
 - Cosine similarity is a strong fit for sparse user-book matrices because it compares direction rather than raw magnitude.
 - Nearest-neighbor retrieval is simple, interpretable, and effective for serving similar books from an item-item similarity matrix.
 
+## Evaluation Strategy
+
+The project now includes a lightweight offline evaluation workflow for the recommender:
+
+```bash
+python evaluate_model.py --top-k 10 --holdout-fraction 0.2 --min-history 3
+```
+
+This uses a per-user holdout split, builds a personalized score from each user's known ratings, and reports:
+
+- precision@k
+- recall@k
+- nDCG@k
+- hit rate
+- reciprocal rank (MRR)
+
+These metrics are useful for checking whether the model surfaces relevant books in the top recommendations and for comparing different recommendation strategies.
+
 ## EDA Coverage
 
 The notebook and dashboard cover:
