@@ -301,7 +301,7 @@ def render_book_card(book: dict[str, object]) -> None:
         if image_value.startswith(("http://", "https://")):
             st.image(
                 image_value,
-                use_container_width=True,
+                width='stretch',
             )
         else:
             st.markdown(
@@ -400,7 +400,7 @@ def render_recommendation_page(recommender: BookRecommender) -> None:
         placeholder="Start typing a book title...",
     )
 
-    if st.button("Recommend", type="primary", use_container_width=True):
+    if st.button("Recommend", type="primary", width='stretch'):
         if not selected_title:
             st.error("Select a book title before requesting recommendations.")
             return
@@ -448,7 +448,7 @@ def render_statistics_page() -> None:
         interactions[
             ["Book-Title", "Book-Author", "User-ID", "Book-Rating", "Publisher", "Year-Of-Publication"]
         ].head(20),
-        use_container_width=True,
+        width='stretch',
     )
 
 
@@ -491,7 +491,7 @@ def render_eda_page() -> None:
         }
     ).fillna(0)
     st.subheader("Missing Values Overview")
-    st.dataframe(missing_summary, use_container_width=True)
+    st.dataframe(missing_summary, width='stretch')
 
 
 def render_about_page() -> None:
